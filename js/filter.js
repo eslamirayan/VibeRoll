@@ -80,7 +80,7 @@ function renderGamesGrid(gamesList) {
       window.location.href = 'results.html';
     };
     card.innerHTML = `
-      <div class="game-card-thumb">${thumbEmojis[game.genre[0]] || '🎮'}</div>
+      <div class="game-card-thumb" data-title="${game.title}" data-emoji="${thumbEmojis[game.genre[0]] || '🎮'}"></div>
       <div class="game-card-body">
         <div class="game-card-title">${game.title}</div>
         <div class="game-card-meta">
@@ -122,6 +122,7 @@ function applyFilters() {
   });
 
   renderGamesGrid(filtered);
+  loadAllCovers();
 }
 
 // ─── FILTER ZURÜCKSETZEN ──────────────────────────────────────────────

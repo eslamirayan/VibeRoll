@@ -32,15 +32,15 @@ function renderResult(game) {
     <span class="badge badge-gray">${game.playTime}</span>
   `;
 
-  // Thumb Emoji je Genre
+  // Thumb mit RAWG Bild laden
   const thumbEmojis = {
     action: '⚔️', rpg: '🧙', shooter: '🔫', strategy: '♟️',
     simulation: '🌾', puzzle: '🧩', platformer: '🏃', horror: '👻',
     sport: '⚽', racing: '🏎️', indie: '🎨', sandbox: '⛏️',
     roguelite: '🎲', party: '🎉', adventure: '🗺️'
   };
-  document.getElementById('resultThumb').textContent =
-    thumbEmojis[game.genre[0]] || '🎮';
+  const thumbEl = document.getElementById('resultThumb');
+  loadCoverInto(thumbEl, game.title, thumbEmojis[game.genre[0]] || '🎮');
 
   // Detail Rows
   document.getElementById('detailPlatform').textContent =
@@ -104,7 +104,7 @@ function renderSimilar(game) {
       setTimeout(() => location.reload(), 300);
     };
     card.innerHTML = `
-      <div class="game-card-thumb">🎮</div>
+      <div class="game-card-thumb" data-title="${g.title}" data-emoji="🎮"></div>
       <div class="game-card-body">
         <div class="game-card-title">${g.title}</div>
         <div class="game-card-meta">
@@ -153,4 +153,5 @@ const currentGame = loadResult();
 if (currentGame) {
   renderResult(currentGame);
   renderSimilar(currentGame);
+  loadAllCovers();
 }

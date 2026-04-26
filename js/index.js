@@ -126,7 +126,7 @@ function renderTopPicks() {
       window.location.href = 'results.html';
     };
     card.innerHTML = `
-      <div class="game-card-thumb">🎮</div>
+      <div class="game-card-thumb" data-title="${game.title}" data-emoji="🎮"></div>
       <div class="game-card-body">
         <div class="game-card-title">${game.title}</div>
         <div class="game-card-meta">
@@ -142,7 +142,7 @@ function renderTopPicks() {
   });
 }
 
-// ─── NAV TOGGLE (MOBIL) ───────────────────────────────────────────────
+// ─── NAV TOGGLE (MOBIL) ──────────────────────────────────────────────
 document.getElementById('navToggle').addEventListener('click', () => {
   document.querySelector('.nav-links').classList.toggle('open');
 });
@@ -153,3 +153,4 @@ renderPlatforms();
 renderGenres();
 renderTopPicks();
 updateRollBtn();
+loadAllCovers();

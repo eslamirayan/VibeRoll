@@ -54,7 +54,7 @@ function renderFavoritesPage() {
     const card = document.createElement('div');
     card.className = 'game-card';
     card.innerHTML = `
-      <div class="game-card-thumb">${thumbEmojis[game.genre[0]] || '🎮'}</div>
+      <div class="game-card-thumb" data-title="${game.title}" data-emoji="${thumbEmojis[game.genre[0]] || '🎮'}"></div>
       <div class="game-card-body">
         <div class="game-card-title">${game.title}</div>
         <div class="game-card-meta"><span class="rating">★ ${game.rating}</span> · ${game.genre[0]}</div>
@@ -69,6 +69,7 @@ function renderFavoritesPage() {
     `;
     favGrid.appendChild(card);
   });
+  loadAllCovers();
 }
 
 function removeFavorite(gameId) { toggleFavorite(gameId); renderFavoritesPage(); }
