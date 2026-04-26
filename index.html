@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViberRoll – Finde dein nächstes Game</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">VIBEROLL</a>
+    <div class="nav-links">
+      <a href="browse.html">Alle Games</a>
+      <a href="favorites.html">Favoriten</a>
+      <a href="about.html">Über uns</a>
+    </div>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+      <div class="hero-blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Kein Plan was du spielen sollst?</p>
+      <h1 class="hero-title">Wir finden<br/>dein Game.</h1>
+      <p class="hero-sub">Wähle deinen Vibe – wir schlagen dir das perfekte Spiel vor.</p>
+    </div>
+  </section>
+
+  <!-- VIBE AUSWAHL -->
+  <section class="picker-section">
+    <div class="container">
+
+      <div class="step">
+        <span class="step-number">01</span>
+        <h2 class="step-title">Wie fühlst du dich gerade?</h2>
+        <p class="step-sub">Wähle einen oder mehrere Vibes</p>
+      </div>
+
+      <div class="vibe-grid" id="vibeGrid"></div>
+
+      <div class="step" style="margin-top: 3rem;">
+        <span class="step-number">02</span>
+        <h2 class="step-title">Auf welcher Plattform?</h2>
+        <p class="step-sub">Mehrere möglich</p>
+      </div>
+
+      <div class="platform-row" id="platformRow"></div>
+
+      <div class="step" style="margin-top: 3rem;">
+        <span class="step-number">03</span>
+        <h2 class="step-title">Noch mehr Filter?</h2>
+        <p class="step-sub">Optional</p>
+      </div>
+
+      <div class="extra-filters">
+        <label class="toggle-wrap">
+          <input type="checkbox" id="multiplayerToggle" />
+          <span class="toggle"></span>
+          <span class="toggle-label">Nur Multiplayer</span>
+        </label>
+
+        <div class="genre-wrap">
+          <p class="filter-label">Genre</p>
+          <div class="genre-pills" id="genrePills"></div>
+        </div>
+      </div>
+
+      <div class="roll-wrap">
+        <button class="roll-btn" id="rollBtn" onclick="goToResult()">
+          <span class="roll-btn-text">Roll mein Game</span>
+          <span class="roll-btn-icon">🎲</span>
+        </button>
+        <p class="roll-hint" id="rollHint">Wähle mindestens einen Vibe</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Games in der Datenbank</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">8</span>
+        <span class="stat-label">Vibes zur Auswahl</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Plattformen</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">∞</span>
+        <span class="stat-label">Spielspaß</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP PICKS -->
+  <section class="top-picks">
+    <div class="container">
+      <h2 class="section-title">Top Picks diese Woche</h2>
+      <div class="picks-grid" id="picksGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="nav-logo">VIBEROLL</span>
+      <p class="footer-text">Gebaut für Gamer. Von Gamern.</p>
+      <div class="footer-links">
+        <a href="about.html">Über uns</a>
+        <a href="browse.html">Alle Games</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/games.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
