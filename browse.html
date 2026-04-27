@@ -1,119 +1,121 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alle Games – ViberRoll</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/browse.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="ViberRoll – Finde dein nächstes Game basierend auf deinem Vibe. PC, PS5, Xbox und Switch." />
+    <meta name="keywords" content="game picker, spiel finder, gaming, ps5, xbox, pc, switch" />
+    <title>Alle Games – ViberRoll</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/browse.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">VIBEROLL</a>
-    <div class="nav-links">
-      <a href="browse.html">Alle Games</a>
-      <a href="favorites.html">Favoriten</a>
-      <a href="about.html">Über uns</a>
-    </div>
-    <button class="nav-toggle" id="navToggle">☰</button>
-  </nav>
-
-  <!-- HEADER -->
-  <section class="browse-header">
-    <div class="container">
-      <h1 class="browse-title">Alle Games</h1>
-      <p class="browse-sub">Stöbere durch unsere komplette Datenbank</p>
-    </div>
-  </section>
-
-  <!-- FILTER + GRID -->
-  <section class="browse-main">
-    <div class="container browse-layout">
-
-      <!-- SIDEBAR FILTER -->
-      <aside class="filter-sidebar">
-        <div class="filter-block">
-          <p class="filter-heading">Suche</p>
-          <input
-            type="text"
-            class="search-input"
-            id="searchInput"
-            placeholder="Game suchen..."
-          />
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">VIBEROLL</a>
+        <div class="nav-links">
+            <a href="browse.html">Alle Games</a>
+            <a href="favorites.html">Favoriten</a>
+            <a href="about.html">Über uns</a>
         </div>
+        <button class="nav-toggle" id="navToggle">☰</button>
+    </nav>
 
-        <div class="filter-block">
-          <p class="filter-heading">Vibe</p>
-          <div class="filter-list" id="filterVibes"></div>
+    <!-- HEADER -->
+    <section class="browse-header">
+        <div class="container">
+            <h1 class="browse-title">Alle Games</h1>
+            <p class="browse-sub">Stöbere durch unsere komplette Datenbank</p>
         </div>
+    </section>
 
-        <div class="filter-block">
-          <p class="filter-heading">Plattform</p>
-          <div class="filter-list" id="filterPlatforms"></div>
+    <!-- FILTER + GRID -->
+    <section class="browse-main">
+        <div class="container browse-layout">
+
+            <!-- SIDEBAR FILTER -->
+            <aside class="filter-sidebar">
+                <div class="filter-block">
+                    <p class="filter-heading">Suche</p>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Game suchen..." />
+                </div>
+
+                <div class="filter-block">
+                    <p class="filter-heading">Vibe</p>
+                    <div class="filter-list" id="filterVibes"></div>
+                </div>
+
+                <div class="filter-block">
+                    <p class="filter-heading">Plattform</p>
+                    <div class="filter-list" id="filterPlatforms"></div>
+                </div>
+
+                <div class="filter-block">
+                    <p class="filter-heading">Genre</p>
+                    <div class="filter-list" id="filterGenres"></div>
+                </div>
+
+                <div class="filter-block">
+                    <p class="filter-heading">Schwierigkeit</p>
+                    <div class="filter-list" id="filterDiff"></div>
+                </div>
+
+                <div class="filter-block">
+                    <label class="toggle-wrap">
+                        <input type="checkbox" id="multiplayerFilter" />
+                        <span class="toggle"></span>
+                        <span class="toggle-label">Nur Multiplayer</span>
+                    </label>
+                </div>
+
+                <button class="reset-btn" onclick="resetFilters()">Filter zurücksetzen</button>
+            </aside>
+
+            <!-- GAME GRID -->
+            <div class="browse-right">
+                <div class="browse-toolbar">
+                    <p class="result-count" id="resultCount">50 Games</p>
+                    <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+                        <option value="rating">Beste Bewertung</option>
+                        <option value="title">Name A–Z</option>
+                        <option value="year">Neueste zuerst</option>
+                    </select>
+                </div>
+
+                <div class="games-grid" id="gamesGrid"></div>
+                <p class="no-results" id="noResults" style="display:none;">
+                    Keine Games gefunden. Versuche weniger Filter. 🎮
+                </p>
+            </div>
+
         </div>
+    </section>
 
-        <div class="filter-block">
-          <p class="filter-heading">Genre</p>
-          <div class="filter-list" id="filterGenres"></div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span class="nav-logo">VIBEROLL</span>
+            <p class="footer-text">Gebaut für Gamer. Von Gamern.</p>
+            <div class="footer-links">
+                <a href="about.html">Über uns</a>
+                <a href="browse.html">Alle Games</a>
+            </div>
         </div>
+    </footer>
 
-        <div class="filter-block">
-          <p class="filter-heading">Schwierigkeit</p>
-          <div class="filter-list" id="filterDiff"></div>
-        </div>
-
-        <div class="filter-block">
-          <label class="toggle-wrap">
-            <input type="checkbox" id="multiplayerFilter" />
-            <span class="toggle"></span>
-            <span class="toggle-label">Nur Multiplayer</span>
-          </label>
-        </div>
-
-        <button class="reset-btn" onclick="resetFilters()">Filter zurücksetzen</button>
-      </aside>
-
-      <!-- GAME GRID -->
-      <div class="browse-right">
-        <div class="browse-toolbar">
-          <p class="result-count" id="resultCount">50 Games</p>
-          <select class="sort-select" id="sortSelect" onchange="applyFilters()">
-            <option value="rating">Beste Bewertung</option>
-            <option value="title">Name A–Z</option>
-            <option value="year">Neueste zuerst</option>
-          </select>
-        </div>
-
-        <div class="games-grid" id="gamesGrid"></div>
-        <p class="no-results" id="noResults" style="display:none;">
-          Keine Games gefunden. Versuche weniger Filter. 🎮
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="nav-logo">VIBEROLL</span>
-      <p class="footer-text">Gebaut für Gamer. Von Gamern.</p>
-      <div class="footer-links">
-        <a href="about.html">Über uns</a>
-        <a href="browse.html">Alle Games</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/games.js"></script>
-  <script src="js/rawg.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/favorites.js"></script>
-  <script src="js/filter.js"></script>
+    <script src="js/games.js"></script>
+    <script src="js/rawg.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/filter.js"></script>
 
 </body>
+
 </html>

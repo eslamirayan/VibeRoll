@@ -1,74 +1,81 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Favoriten – ViberRoll</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/favorites.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="ViberRoll – Finde dein nächstes Game basierend auf deinem Vibe. PC, PS5, Xbox und Switch." />
+    <meta name="keywords" content="game picker, spiel finder, gaming, ps5, xbox, pc, switch" />
+    <title>Favoriten – ViberRoll</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/favorites.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">VIBEROLL</a>
-    <div class="nav-links">
-      <a href="browse.html">Alle Games</a>
-      <a href="favorites.html">Favoriten</a>
-      <a href="about.html">Über uns</a>
-    </div>
-    <button class="nav-toggle" id="navToggle">☰</button>
-  </nav>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">VIBEROLL</a>
+        <div class="nav-links">
+            <a href="browse.html">Alle Games</a>
+            <a href="favorites.html">Favoriten</a>
+            <a href="about.html">Über uns</a>
+        </div>
+        <button class="nav-toggle" id="navToggle">☰</button>
+    </nav>
 
-  <!-- HEADER -->
-  <section class="fav-header">
-    <div class="container">
-      <h1 class="fav-title">Deine Favoriten</h1>
-      <p class="fav-sub">Games die du gespeichert hast</p>
-    </div>
-  </section>
+    <!-- HEADER -->
+    <section class="fav-header">
+        <div class="container">
+            <h1 class="fav-title">Deine Favoriten</h1>
+            <p class="fav-sub">Games die du gespeichert hast</p>
+        </div>
+    </section>
 
-  <!-- FAVORITEN GRID -->
-  <section class="fav-main">
-    <div class="container">
+    <!-- FAVORITEN GRID -->
+    <section class="fav-main">
+        <div class="container">
 
-      <!-- LEER STATE -->
-      <div class="fav-empty" id="favEmpty">
-        <div class="fav-empty-icon">🎮</div>
-        <h2 class="fav-empty-title">Noch keine Favoriten</h2>
-        <p class="fav-empty-sub">Geh auf die Ergebnisseite und speichere Games die dir gefallen.</p>
-        <a href="index.html" class="btn btn-primary" style="margin-top:1.5rem;">Jetzt rollen</a>
-      </div>
+            <!-- LEER STATE -->
+            <div class="fav-empty" id="favEmpty">
+                <div class="fav-empty-icon">🎮</div>
+                <h2 class="fav-empty-title">Noch keine Favoriten</h2>
+                <p class="fav-empty-sub">Geh auf die Ergebnisseite und speichere Games die dir gefallen.</p>
+                <a href="index.html" class="btn btn-primary" style="margin-top:1.5rem;">Jetzt rollen</a>
+            </div>
 
-      <!-- FAVORITEN LISTE -->
-      <div class="fav-grid" id="favGrid"></div>
+            <!-- FAVORITEN LISTE -->
+            <div class="fav-grid" id="favGrid"></div>
 
-      <!-- ALLE LÖSCHEN -->
-      <div class="fav-actions" id="favActions" style="display:none;">
-        <button class="reset-btn" onclick="clearAllFavorites()">Alle Favoriten löschen</button>
-      </div>
+            <!-- ALLE LÖSCHEN -->
+            <div class="fav-actions" id="favActions" style="display:none;">
+                <button class="reset-btn" onclick="clearAllFavorites()">Alle Favoriten löschen</button>
+            </div>
 
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="nav-logo">VIBEROLL</span>
-      <p class="footer-text">Gebaut für Gamer. Von Gamern.</p>
-      <div class="footer-links">
-        <a href="about.html">Über uns</a>
-        <a href="browse.html">Alle Games</a>
-      </div>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span class="nav-logo">VIBEROLL</span>
+            <p class="footer-text">Gebaut für Gamer. Von Gamern.</p>
+            <div class="footer-links">
+                <a href="about.html">Über uns</a>
+                <a href="browse.html">Alle Games</a>
+            </div>
+        </div>
+    </footer>
 
-  <script src="js/games.js"></script>
-  <script src="js/rawg.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/favorites.js"></script>
+    <script src="js/games.js"></script>
+    <script src="js/rawg.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/favorites.js"></script>
 
 </body>
+
 </html>
